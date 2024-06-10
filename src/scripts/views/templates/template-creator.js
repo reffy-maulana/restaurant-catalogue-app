@@ -6,8 +6,8 @@ import CONFIG from '../../global/config';
 const createRestaurantItemTemplate = (restaurant) => `
   <a href="#/detail/${restaurant.id || '-'}" class="restaurant-item catalogue__item" tabindex="0" data-id="${restaurant.id || '-'}">
     <picture>
-      <source media="(max-width: 600px)" srcset="${CONFIG.BASE_IMG_URL_SMALL.replace('<pictureId>', restaurant.pictureId)}">
-      <img src="${CONFIG.BASE_IMG_URL_MEDIUM.replace('<pictureId>', restaurant.pictureId)}" alt="${restaurant.name || '-'}" class="item__image lazyload" />
+      <source media="(max-width: 600px)" data-srcset="${CONFIG.BASE_IMG_URL_SMALL.replace('<pictureId>', restaurant.pictureId)}">
+      <img data-src="${CONFIG.BASE_IMG_URL_MEDIUM.replace('<pictureId>', restaurant.pictureId)}" alt="${restaurant.name || '-'}" class="item__image lazyload" />
     </picture>
     <div class="item__content">
       <h1 class="item__title">${restaurant.name || '-'}</h1>
@@ -21,8 +21,8 @@ const createRestaurantItemTemplate = (restaurant) => `
 const createRestaurantDetailTemplate = (restaurant) => `
   <div class="restaurant__detail">
     <picture>
-      <source media="(max-width: 600px)" srcset="${CONFIG.BASE_IMG_URL_SMALL.replace('<pictureId>', restaurant.pictureId)}">
-      <img class="restaurant__image lazyload" src="${CONFIG.BASE_IMG_URL_MEDIUM.replace('<pictureId>', restaurant.pictureId)}" alt="${restaurant.name}" />
+      <source media="(max-width: 600px)" data-srcset="${CONFIG.BASE_IMG_URL_SMALL.replace('<pictureId>', restaurant.pictureId)}">
+      <img data-src="${CONFIG.BASE_IMG_URL_MEDIUM.replace('<pictureId>', restaurant.pictureId)}" alt="${restaurant.name}" class="restaurant__image lazyload" />
     </picture>
     <div class="restaurant__info">
       <h2 class="restaurant__title">${restaurant.name}</h2>
