@@ -92,6 +92,13 @@ module.exports = {
         }),
       ],
     }),
-    new BundleAnalyzerPlugin(),
-  ],
+    process.env.NODE_ENV === 'production' && new BundleAnalyzerPlugin({
+
+      analyzerMode: 'static',
+
+      openAnalyzer: false,
+
+    }),
+
+  ].filter(Boolean),
 };
